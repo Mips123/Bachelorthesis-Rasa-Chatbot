@@ -20,12 +20,6 @@ rules:
     - intent: save_name
     - action: action_save_name
 
-# rule belongs to teach_Py2Neo.py
-- rule: Retrieve something from the DB
-  steps:
-    - intent: retrieve_knowledge
-    - action: action_select_random_entry_from_db
-
 # ruleset to start training bot
 - rule: Bot affirms learning and confirms it
   steps:

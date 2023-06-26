@@ -1,15 +1,6 @@
 from typing import Any, Dict, List, Text
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
-from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
-
-"""
-class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
-    def __init__(self):
-        knowledge_base = InMemoryKnowledgeBase("data.json")
-        super().__init__(knowledge_base)
-"""
 
 
 class ActionTeach(Action):
