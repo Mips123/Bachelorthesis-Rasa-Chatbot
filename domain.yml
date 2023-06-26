@@ -1,0 +1,125 @@
+version: '3.1'
+intents:
+- Software_Type
+- affirm
+- bot_challenge
+- deny
+- get_Software_Type
+- goodbye
+- greet
+- hello_world
+- mood_great
+- mood_unhappy
+- retrieve_knowledge
+- save_name
+- teach
+# softwareType
+- set_softwareTypes
+- get_softwareTypes
+# softwareQuality
+- set_softwareQuality
+- get_softwareQuality
+# systematicProcess
+- set_systematicProcess
+- get_systematicProcess
+# areasOfTension
+- set_areasOfTension
+- get_areasOfTension
+# typesOfApplication
+- set_typesOfApplication
+- get_typesOfApplication
+# generic function, does not work
+- get_learned_content_of_specific_topic
+slots:
+  # name of the user
+  userName:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: userName
+  # can only be one word, but can be also a list of strings
+  softwareTypes:
+    type: list
+    mappings:
+      - type: from_entity
+        entity: softwareTypes
+  # can only be one word, but can be also a list of strings
+  softwareQuality:
+    type: list
+    mappings:
+      - type: from_entity
+        entity: softwareQuality
+  # can only be one word, but can be also a list of strings
+  systematicProcess:
+    type: list
+    mappings:
+      - type: from_entity
+        entity: systematicProcess
+  # can only be one word, but can be also a list of strings
+  areasOfTension:
+    type: list
+    mappings:
+      - type: from_entity
+        entity: areasOfTension
+  # can only be one word, but can be also a list of strings
+  typesOfApplication:
+    type: list
+    mappings:
+      - type: from_entity
+        entity: typesOfApplication
+  # this value should be used to search for certain slots via user input, function not properly implemented yet
+  searchValue:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: searchValue
+entities:
+- userName
+- softwareTypes
+- softwareQuality
+- systematicProcess
+- areasOfTension
+- typesOfApplication
+# searchValue not implemented in custom action yet
+- searchValue
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye {userName}
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+# template actions
+- utter_goodbye
+- action_get_information
+- action_confirm_learning
+- action_save_name
+- utter_greet
+- utter_happy
+- action_hello_world
+- action_teach
+- utter_iamabot
+# functions belong to teach_Py2Neo.py
+- action_select_random_entry_from_db
+- action_save_entities_to_graph
+# functions belong to teach_SlotSet.py
+- action_save_knowledge
+# function is not properly implemented yet
+- action_get_information_about_certain_topic
+# get_intents for entities / slots
+- action_get_softwareTypes
+- action_get_softwareQuality
+- action_get_systematicProcess
+- action_get_areasOfTension
+- action_get_typesOfApplication
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

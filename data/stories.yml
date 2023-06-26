@@ -1,0 +1,52 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+#- story: Getting to know each other
+#  steps:
+#  - intent: save_name
+#    entities:
+#    - userName: David
+#  - slot_was_set:
+#    - userName: David
+#  - action: action_save_name
+
+
+#- story: Teach Bot
+#  steps:
+#    - intent: teach
+#    - action: action_confirm_learning
+#    - intent: set_softwareType
+#    - action: action_save_knowledge
+#    - intent: get_softwareType
+#    - action: action_get_information
+
+

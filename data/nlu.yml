@@ -1,0 +1,191 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hallo chatbot
+    - HI
+- intent: goodbye
+  examples: |
+    - goodbye(userName)
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very goody
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: hello_world
+  examples: |
+    - Hello World
+    - Hello World!
+- intent: teach
+  examples: |
+    - I want you to learn something
+    - Teach
+    - Here is something for you
+    - Listen up
+    - i want you to learn something
+- intent: save_name
+  examples: |
+    - My name is [David](userName)
+    - I am [Vera](userName)
+    - My name is [Vera](userName)
+    - My name is [Lisa](userName)
+- regex: userName
+  examples: |
+    - /^[^\d\W]+$/
+#belongs to teach_txtKnowledgebase.py
+- intent: retrieve_knowledge
+  examples: |
+    - What did you learn?
+    - Learned something?
+
+# belongs to actions -> teach_Slotset.py
+- intent: set_softwareTypes
+  examples: |
+    - There are two types of software. [Bespoke Software](softwareTypes) and [Generic Software](softwareTypes)
+    - There are two types of software. [Generic Software](softwareTypes) and [Bespoke Software](softwareTypes)
+    - The two types of software are [Bespoke Software](softwareTypes) and [Generic Software](softwareTypes)
+    - The types of software are [Bespoke Software](softwareTypes) and [Generic Software](softwareTypes)
+# belongs to actions -> teach_Slotset.py
+- intent: get_softwareTypes
+  examples: |
+    - What Software Types are there?
+    - What are the two types of software?
+    - What types of Software are there?
+
+# belongs to actions -> teach_Slotset.py
+- intent: set_softwareQuality
+  examples: |
+    - There are four types of software quality. [Runtime behaviour](softwareQuality) and [documentation](softwareQuality), [none-functional requirements] (softwareQuality) and [structure and organisation of components](softwareQuality)
+    - The types of software quality are [Runtime behaviour](softwareQuality), [documentation](softwareQuality), [none-functional requirements] (softwareQuality) and [structure and organisation of components](softwareQuality)
+    - There are many aspects of software quality. [Runtime behaviour](softwareQuality), [documentation](softwareQuality), [none-functional requirements] (softwareQuality) and [structure and organisation of components](softwareQuality)
+- intent: get_softwareQuality
+  examples: |
+    - What aspects does software quality have?
+    - What are aspects of software?
+    - What does software quality mean in software development?
+    - What do you know about software quality?
+
+# belongs to actions -> teach_Slotset.py
+- intent: set_systematicProcess #these sentences are from CHATGPT!!!
+  examples: |
+    - There are several steps in the systematic process, such as [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess), and [Software Evolution](systematicProcess).
+    - The systematic process involves stages like [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess), and [Software Evolution](systematicProcess).
+    - In the systematic process, you have [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess), and [Software Evolution](systematicProcess).
+    - [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess), and [Software Evolution](systematicProcess) are key steps in the systematic process.
+- intent: get_systematicProcess
+  examples: |
+    - Tell me something about the systematic process. 
+    - What steps are involved in the Software Specification process?
+    - Can you outline the key phases of Software Design and Implementation?
+    - How is Software Validation typically carried out in a systematic process?
+    - What are the key aspects in the process of in software development?
+    - Could you explain the systematic process in software development?
+
+# belongs to actions -> teach_Slotset.py --> these sentences are from CHATGPT!!!
+- intent: set_areasOfTension
+  examples: |
+    - When it comes to areas of tension, we have to consider factors like [Heterogeneity](areasOfTension), [Operational and social changes](areasOfTension), and [Security and Trust](areasOfTension).
+    - The areas of tension in this context include [Heterogeneity](areasOfTension), [Operational and social changes](areasOfTension), and [Security and Trust](areasOfTension).
+    - Consideration of [Heterogeneity](areasOfTension), [Operational and social changes](areasOfTension), and [Security and Trust](areasOfTension) is essential in understanding the areas of tension.
+    - [Heterogeneity](areasOfTension), [Operational and social changes](areasOfTension), and [Security and Trust](areasOfTension) are key factors in areas of tension.
+- intent: get_areasOfTensions
+  examples: |
+    - What are some aspects of Areas of Tensions?
+    - Can you provide more information about the different Areas of Tensions?
+    - How can we categorize Areas of Tensions?
+    - What are the key characteristics of Areas of Tensions?
+
+# belongs to actions -> teach_Slotset.py --> #these sentences are from CHATGPT!!!
+- intent: set_typesOfApplication
+  examples: |
+    - Some examples of types of applications include [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication), [Data-Collection Systems](typesOfApplication), and [Systems of Systems](typesOfApplication).
+    - When discussing types of applications, we can talk about [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication), [Data-Collection Systems](typesOfApplication), and [Systems of Systems](typesOfApplication).
+    - [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication), [Data-Collection Systems](typesOfApplication), and [Systems of Systems](typesOfApplication) are different types of applications.
+    - We can categorize applications into various types such as [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication), [Data-Collection Systems](typesOfApplication), and [Systems of Systems](typesOfApplication).
+- intent: get_typesOfApplication
+  examples: |
+    - What are some aspects of Types of Application?
+    - Can you provide more information about the different types of applications?
+    - How can we categorize Types of Application?
+    - What are the key characteristics of Stand-alone Applications?
+
+# generic get information action, belongs to actions -> teach_Slotset.py
+- intent: get_learned_content_of_specific_topic
+  examples: |
+    - Tell me something about [softwareTypes](searchValue)?
+    - Tell me something about [softwareQuality](searchValue)?
+#    - What are the two [Software Types](searchValue)?
+#    - What do you know about [Software Types](searchValue)?
+
