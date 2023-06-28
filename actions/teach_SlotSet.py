@@ -1,3 +1,4 @@
+import json
 from typing import Any, Dict, List, Text
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -134,6 +135,118 @@ class ActionGetInformationTypesOfApplication(Action):
         return []
 
 
+# this function only return the set of information about a certain topic - professionalSoftwareDevelopment
+class ActionGetInformationProfessionalSoftwareDevelopment(Action):
+    def name(self) -> Text:
+        return "action_get_professionalSoftwareDevelopment"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        search_value = "professionalSoftwareDevelopment"
+
+        information_learned = tracker.get_slot(search_value)
+
+        if information_learned:
+            dispatcher.utter_message(text=f"Learned content for {search_value} is: {information_learned}")
+        else:
+            dispatcher.utter_message(f"No information about {search_value} learned so far.")
+
+        return []
+
+
+# this function only return the set of information about a certain topic - professionalSoftwareDevelopment
+class ActionGetInformationSoftware(Action):
+    def name(self) -> Text:
+        return "action_get_software"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        search_value = "software"
+
+        information_learned = tracker.get_slot(search_value)
+
+        if information_learned:
+            dispatcher.utter_message(text=f"Learned content for {search_value} is: {information_learned}")
+        else:
+            dispatcher.utter_message(f"No information about {search_value} learned so far.")
+
+        return []
+
+# this function only return the set of information about a certain topic - softwareEngineeringDisciplines
+class ActionGetSoftwareEngineeringDisciplines(Action):
+    def name(self) -> Text:
+        return "action_get_softwareEngineeringDisciplines"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        search_value = "softwareEngineeringDisciplines"
+
+        information_learned = tracker.get_slot(search_value)
+
+        if information_learned:
+            dispatcher.utter_message(text=f"Learned content for {search_value} is: {information_learned}")
+        else:
+            dispatcher.utter_message(f"No information about {search_value} learned so far.")
+
+        return []
+
+
+# this function only return the set of information about a certain topic - softwareEthics
+class ActionGetsoftwareEthics(Action):
+    def name(self) -> Text:
+        return "action_get_softwareEthics"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        search_value = "softwareEthics"
+
+        information_learned = tracker.get_slot(search_value)
+
+        if information_learned:
+            dispatcher.utter_message(text=f"Learned content for {search_value} is: {information_learned}")
+        else:
+            dispatcher.utter_message(f"No information about {search_value} learned so far.")
+
+        return []
+
+
+# this function should return all the information learned (maybe add that this is dumbed into a file)
+class ActionGetAllLearnedContent(Action):
+    def name(self) -> Text:
+        return "action_get_all_learned_content"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Get all the set slot names
+        slot_names = tracker.slots.keys()
+
+        # Create a dictionary to store the non-None slot values
+        slot_values = {}
+
+        # Store the non-None slot values
+        for slot_name in slot_names:
+            slot_value = tracker.get_slot(slot_name)
+            if slot_value is not None:
+                slot_values[slot_name] = slot_value
+
+        # Print the non-None slot values
+        for slot_name, slot_value in slot_values.items():
+            dispatcher.utter_message(text=f"{slot_name}: {slot_value}")
+
+        # Save the non-None slot values in a JSON file
+        with open('slot_values.json', 'w') as file:
+            json.dump(slot_values, file)
+
+        return []
+
+
 # this function should return the set of information about a certain topic
 # as of today the try to make it generic, but no idea yet
 class ActionGetInformationAboutCertainTopic(Action):
@@ -164,4 +277,3 @@ class ActionGetInformationAboutCertainTopic(Action):
             dispatcher.utter_message(text="I don't have any information at the moment.")"""
 
         return []
-

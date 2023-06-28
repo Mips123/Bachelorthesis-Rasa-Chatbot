@@ -4,6 +4,17 @@ intents:
 - affirm
 - bot_challenge
 - deny
+- get_areasOfTension
+- get_learned_content_of_specific_topic
+- get_professionalSoftwareDevelopment
+- get_software
+- get_softwareEngineeringDisciplines
+- get_softwareEthics
+- get_softwareQuality
+- get_softwareTypes
+- get_systematicProcess
+- get_typesOfApplication
+- get_all_knowledge
 - goodbye
 - greet
 - hello_world
@@ -11,75 +22,83 @@ intents:
 - mood_unhappy
 - retrieve_knowledge
 - save_name
-- teach
-# softwareType
-- set_softwareTypes
-- get_softwareTypes
-# softwareQuality
-- set_softwareQuality
-- get_softwareQuality
-# systematicProcess
-- set_systematicProcess
-- get_systematicProcess
-# areasOfTension
 - set_areasOfTension
-- get_areasOfTension
-# typesOfApplication
+- set_professionalSoftwareDevelopment
+- set_software
+- set_softwareEngineeringDisciplines
+- set_softwareEthics
+- set_softwareQuality
+- set_softwareTypes
+- set_systematicProcess
 - set_typesOfApplication
-- get_typesOfApplication
-# generic function, does not work
-- get_learned_content_of_specific_topic
+- teach
 slots:
-  # name of the user
   userName:
     type: text
     mappings:
     - type: from_entity
       entity: userName
-  # can only be one word, but can be also a list of strings
+  professionalSoftwareDevelopment:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: professionalSoftwareDevelopment
+  software:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: software
   softwareTypes:
     type: list
     mappings:
-      - type: from_entity
-        entity: softwareTypes
-  # can only be one word, but can be also a list of strings
+    - type: from_entity
+      entity: softwareTypes
   softwareQuality:
     type: list
     mappings:
-      - type: from_entity
-        entity: softwareQuality
-  # can only be one word, but can be also a list of strings
+    - type: from_entity
+      entity: softwareQuality
   systematicProcess:
     type: list
     mappings:
-      - type: from_entity
-        entity: systematicProcess
-  # can only be one word, but can be also a list of strings
+    - type: from_entity
+      entity: systematicProcess
+  softwareEngineeringDisciplines:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: softwareEngineeringDisciplines
   areasOfTension:
     type: list
     mappings:
-      - type: from_entity
-        entity: areasOfTension
-  # can only be one word, but can be also a list of strings
+    - type: from_entity
+      entity: areasOfTension
   typesOfApplication:
     type: list
     mappings:
-      - type: from_entity
-        entity: typesOfApplication
-  # this value should be used to search for certain slots via user input, function not properly implemented yet
+    - type: from_entity
+      entity: typesOfApplication
+  softwareEthics:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: softwareEthics
   searchValue:
     type: text
     mappings:
-      - type: from_entity
-        entity: searchValue
+    - type: from_entity
+      entity: searchValue
 entities:
-- userName
-- softwareTypes
-- softwareQuality
+- softwareEthics
+- softwareEngineeringDisciplines
+- software
+- professionalSoftwareDevelopment
 - systematicProcess
-- areasOfTension
 - typesOfApplication
-# searchValue not implemented in custom action yet
+- softwareQuality
+- softwareTypes
+- userName
+- areasOfTension
 - searchValue
 responses:
   utter_greet:
@@ -96,26 +115,27 @@ responses:
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
 actions:
-# template actions
+- action_save_knowledge
+- action_get_softwareEthics
+- action_get_softwareEngineeringDisciplines
+- action_get_software
+- action_get_systematicProcess
+- action_get_typesOfApplication
+- action_get_softwareTypes
+- action_save_name
 - utter_goodbye
 - action_get_information
 - action_confirm_learning
-- action_save_name
 - utter_greet
 - utter_happy
 - action_hello_world
 - action_teach
 - utter_iamabot
-# functions belong to teach_SlotSet.py
-- action_save_knowledge
-# function is not properly implemented yet
 - action_get_information_about_certain_topic
-# get_intents for entities / slots
-- action_get_softwareTypes
 - action_get_softwareQuality
-- action_get_systematicProcess
 - action_get_areasOfTension
-- action_get_typesOfApplication
+- action_get_professionalSoftwareDevelopment
+- action_get_all_learned_content
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

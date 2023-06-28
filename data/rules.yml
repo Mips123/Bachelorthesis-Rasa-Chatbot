@@ -28,6 +28,26 @@ rules:
 
 # rules for teach_SlotSet.py
 ############################
+# ruleset for professionalSoftwareDevelopment
+- rule: Safe Slot in knowledge about professionalSoftwareDevelopment
+  steps:
+    - intent: set_professionalSoftwareDevelopment
+    - action: action_save_knowledge
+- rule: get information existing in slot systematicProcess
+  steps:
+    - intent: get_professionalSoftwareDevelopment
+    - action: action_get_professionalSoftwareDevelopment
+
+# ruleset for Software
+- rule: Safe Slot in knowledge about software
+  steps:
+    - intent: set_software
+    - action: action_save_knowledge
+- rule: get information existing in slot software
+  steps:
+    - intent: get_software
+    - action: action_get_software
+
 # ruleset for softwareTypes
 - rule: set slot in knowledge about softwareTypes
   steps:
@@ -48,6 +68,26 @@ rules:
     - intent: get_softwareQuality
     - action: action_get_softwareQuality
 
+# ruleset for systematicProcess
+- rule: Safe Slot in knowledge about systematicProcess
+  steps:
+    - intent: set_systematicProcess
+    - action: action_save_knowledge
+- rule: get information existing in slot systematicProcess
+  steps:
+    - intent: get_systematicProcess
+    - action: action_get_systematicProcess
+
+# ruleset for softwareEngineeringDisciplines
+- rule: Safe Slot in knowledge about softwareEngineeringDisciplines
+  steps:
+    - intent: set_softwareEngineeringDisciplines
+    - action: action_save_knowledge
+- rule: get information existing in slot softwareEngineeringDisciplines
+  steps:
+    - intent: get_softwareEngineeringDisciplines
+    - action: action_get_softwareEngineeringDisciplines
+
 # ruleset for areasOfTension
 - rule: set Slot in knowledge about areasOfTension
   steps:
@@ -58,15 +98,21 @@ rules:
     - intent: get_areasOfTension
     - action: action_get_areasOfTension
 
-# ruleset for systematicProcess
-- rule: Safe Slot in knowledge about systematicProcess
+# ruleset for softwareEthics
+- rule: set Slot in knowledge about softwareEthics
   steps:
-    - intent: set_systematicProcess
+    - intent: set_softwareEthics
     - action: action_save_knowledge
-- rule: get information existing in slot systematicProcess
+- rule: get information existing in slot softwareEthics
   steps:
-    - intent: get_systematicProcess
-    - action: action_get_systematicProcess
+    - intent: get_softwareEthics
+    - action: action_get_softwareEthics
+
+# ruleset for getting all the learned knowledge
+- rule: get all the learned knowledge printed and as a file
+  steps:
+    - intent: get_all_knowledge
+    - action: action_get_all_learned_content
 
 # should be generic, but is not
 - rule: Give all the information about a certain topic

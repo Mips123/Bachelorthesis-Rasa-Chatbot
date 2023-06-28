@@ -45,7 +45,7 @@ class ConfirmLearning(Action):
             self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict[Text, Any]]:
         # Nachricht senden und auf Benutzereingabe warten
-        dispatcher.utter_message(text="Great, let´s learn something new")
+        dispatcher.utter_message(text="Great, let´s learn something new!")
         return []
 
 
