@@ -104,11 +104,6 @@ nlu:
 - regex: userName
   examples: |
     - /^[^\d\W]+$/
-#belongs to teach_txtKnowledgebase.py
-- intent: retrieve_knowledge
-  examples: |
-    - What did you learn?
-    - Learned something?
 
 # belongs to actions -> teach_Slotset.py
 - intent: set_softwareTypes

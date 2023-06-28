@@ -4,7 +4,6 @@ intents:
 - affirm
 - bot_challenge
 - deny
-- get_Software_Type
 - goodbye
 - greet
 - hello_world
@@ -107,9 +106,6 @@ actions:
 - action_hello_world
 - action_teach
 - utter_iamabot
-# functions belong to teach_Py2Neo.py
-- action_select_random_entry_from_db
-- action_save_entities_to_graph
 # functions belong to teach_SlotSet.py
 - action_save_knowledge
 # function is not properly implemented yet
