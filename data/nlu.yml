@@ -12,8 +12,6 @@ nlu:
     - hey there
     - let's go
     - hey dude
-    - goodmorning
-    - goodevening
     - good afternoon
     - hallo chatbot
     - HI
@@ -75,7 +73,7 @@ nlu:
     - unhappy
     - not good
     - not very goody
-    - extremly sad
+    - extremely sad
     - so saad
     - so sad
 - intent: bot_challenge
@@ -100,87 +98,153 @@ nlu:
     - My name is [David](userName)
     - I am [Vera](userName)
     - My name is [Vera](userName)
-    - My name is [Lisa](userName)
-- regex: userName
+    - My name is [Stefan](userName)
+    - Call me [Peter](userName)
+    - My name is [Oliver](userName)
+- intent: set_professionalSoftwareDevelopment
   examples: |
-    - /^[^\d\W]+$/
-
-# belongs to actions -> teach_Slotset.py
+    - Professional software development can be described with [programming as side activity](professionalSoftwareDevelopment) and [professional programming](professionalSoftwareDevelopment)
+    - Professional software development has two aspects, [programming as side activity](professionalSoftwareDevelopment) and [professional programming](professionalSoftwareDevelopment)
+    - [Programming as side activity](professionalSoftwareDevelopment) and [professional programming](professionalSoftwareDevelopment) are two parts of professional software development.
+    - Two parts of professional software development are [programming as side activity](professionalSoftwareDevelopment) and [professional programming](professionalSoftwareDevelopment)
+    - Professional software development has the two main parts, [programming as side activity](professionalSoftwareDevelopment) and [Professional Programming](professionalSoftwareDevelopment)
+- intent: get_professionalSoftwareDevelopment
+  examples: |
+    - What are the two main aspects of professional software development?
+    - Which two parts has professional software development?
+    - Tell me something about professional software development.
+    - What do you understand under professional software development?
+    - Professional software development?
+- intent: set_software
+  examples: |
+    - Software can be described as the sum of [configuration files](software), [system documentation](software), [user documentation](software) and [websites](software)
+    - Software consists of the following components: [configuration files](software), [system documentation](software), [user documentation](software) and [websites](software)
+    - Software has four parts: [configuration files](software), [system documentation](software), [user documentation](software) and [websites](software)
+    - Software is the sum of [configuration files](software), [system documentation](software), [user documentation](software) and [websites](software).
+    - [configuration files](software), [system documentation](software), [user documentation](software) and [websites](software)
+    - Software is not just source code, it is [configurations files](software), [system documentation](software), [user documentation](software) and [websites](software)
+- intent: get_software
+  examples: |
+    - What is software?
+    - What four parts consists software off?
+    - What are core parts of software?
+    - Why is software more than program code?
+    - Tell me something about software.
 - intent: set_softwareTypes
   examples: |
-    - There are two types of software. [Bespoke Software](softwareTypes) and [Generic Software](softwareTypes)
-    - There are two types of software. [Generic Software](softwareTypes) and [Bespoke Software](softwareTypes)
-    - The two types of software are [Bespoke Software](softwareTypes) and [Generic Software](softwareTypes)
-    - The types of software are [Bespoke Software](softwareTypes) and [Generic Software](softwareTypes)
-# belongs to actions -> teach_Slotset.py
+    - There are two types of software. [Bespoke software](softwareTypes) and [generic software](softwareTypes)
+    - There are two types of software. [Generic software](softwareTypes) and [bespoke software](softwareTypes)
+    - The two types of software are [bespoke software](softwareTypes) and [generic software](softwareTypes)
+    - The types of software are [bespoke software](softwareTypes) and [generic software](softwareTypes)
 - intent: get_softwareTypes
   examples: |
-    - What Software Types are there?
+    - What software types are there?
     - What are the two types of software?
-    - What types of Software are there?
-
-# belongs to actions -> teach_Slotset.py
+    - What types of software are there?
+    - What do you know about software types?
 - intent: set_softwareQuality
   examples: |
     - There are four types of software quality. [Runtime behaviour](softwareQuality) and [documentation](softwareQuality), [none-functional requirements] (softwareQuality) and [structure and organisation of components](softwareQuality)
     - The types of software quality are [Runtime behaviour](softwareQuality), [documentation](softwareQuality), [none-functional requirements] (softwareQuality) and [structure and organisation of components](softwareQuality)
     - There are many aspects of software quality. [Runtime behaviour](softwareQuality), [documentation](softwareQuality), [none-functional requirements] (softwareQuality) and [structure and organisation of components](softwareQuality)
+    - There are four aspects of software quality. [Runtime behaviour](softwareQuality), [documentation](softwareQuality), [none-functional requirements](softwareQuality) and [structure and organisation of components](softwareQuality)
 - intent: get_softwareQuality
   examples: |
     - What aspects does software quality have?
     - What are aspects of software?
     - What does software quality mean in software development?
     - What do you know about software quality?
-
-# belongs to actions -> teach_Slotset.py
-- intent: set_systematicProcess #these sentences are from CHATGPT!!!
+- intent: set_systematicProcess
   examples: |
     - There are several steps in the systematic process, such as [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess), and [Software Evolution](systematicProcess).
     - The systematic process involves stages like [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess), and [Software Evolution](systematicProcess).
     - In the systematic process, you have [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess), and [Software Evolution](systematicProcess).
     - [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess), and [Software Evolution](systematicProcess) are key steps in the systematic process.
+    - There are several steps in the systematic process, such as [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation and](systematicProcess) [Software Evolution](systematicProcess)
+    - The systematic process in software development can be described with [Software Specification](systematicProcess), [Software Design and Implementation](systematicProcess), [Software Validation](systematicProcess) and  [Software Evolution](systematicProcess).
 - intent: get_systematicProcess
   examples: |
-    - Tell me something about the systematic process. 
+    - Tell me something about the systematic process.
     - What steps are involved in the Software Specification process?
-    - Can you outline the key phases of Software Design and Implementation?
-    - How is Software Validation typically carried out in a systematic process?
     - What are the key aspects in the process of in software development?
     - Could you explain the systematic process in software development?
-
-# belongs to actions -> teach_Slotset.py --> these sentences are from CHATGPT!!!
+    - What are the steps in the systematic process in software development?
 - intent: set_areasOfTension
   examples: |
     - When it comes to areas of tension, we have to consider factors like [Heterogeneity](areasOfTension), [Operational and social changes](areasOfTension), and [Security and Trust](areasOfTension).
     - The areas of tension in this context include [Heterogeneity](areasOfTension), [Operational and social changes](areasOfTension), and [Security and Trust](areasOfTension).
     - Consideration of [Heterogeneity](areasOfTension), [Operational and social changes](areasOfTension), and [Security and Trust](areasOfTension) is essential in understanding the areas of tension.
     - [Heterogeneity](areasOfTension), [Operational and social changes](areasOfTension), and [Security and Trust](areasOfTension) are key factors in areas of tension.
-- intent: get_areasOfTensions
+- intent: get_areasOfTension
   examples: |
     - What are some aspects of Areas of Tensions?
     - Can you provide more information about the different Areas of Tensions?
     - How can we categorize Areas of Tensions?
     - What are the key characteristics of Areas of Tensions?
-
-# belongs to actions -> teach_Slotset.py --> #these sentences are from CHATGPT!!!
 - intent: set_typesOfApplication
   examples: |
     - Some examples of types of applications include [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication), [Data-Collection Systems](typesOfApplication), and [Systems of Systems](typesOfApplication).
     - When discussing types of applications, we can talk about [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication), [Data-Collection Systems](typesOfApplication), and [Systems of Systems](typesOfApplication).
     - [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication), [Data-Collection Systems](typesOfApplication), and [Systems of Systems](typesOfApplication) are different types of applications.
     - We can categorize applications into various types such as [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication), [Data-Collection Systems](typesOfApplication), and [Systems of Systems](typesOfApplication).
+    - Some examples of types of applications are [Stand-alone applications](typesOfApplication), [embedded control systems](typesOfApplication), [batch processing systems](typesOfApplication), [entertainment systems]{"entity": "typesOfApplication", "value": "Entertainment Systems"}
+    - Some examples of types of applications are [Stand-alone Applications](typesOfApplication), [Interactive transactions-based applications](typesOfApplication), [Embedded Control Systems](typesOfApplication), [Batch Processing Systems](typesOfApplication), [Entertainment Systems](typesOfApplication), [Systems for Simulation and Modelling](typesOfApplication) [Data-Collection Systems](typesOfApplication) and [Systems of Systems](typesOfApplication)
+    - The types of applications are: [Stand-alone applications](typesOfApplication), [interactive transactions-based applications](typesOfApplication), [embedded control systems](typesOfApplication), [batch processing systems](typesOfApplication), [entertainment systems](typesOfApplication), [systems for simulation and modelling](typesOfApplication), [Systems for data collection](typesOfApplication) and [systems of systems](typesOfApplication)
 - intent: get_typesOfApplication
   examples: |
-    - What are some aspects of Types of Application?
+    - What are some aspects of types of application?
     - Can you provide more information about the different types of applications?
-    - How can we categorize Types of Application?
-    - What are the key characteristics of Stand-alone Applications?
-
-# generic get information action, belongs to actions -> teach_Slotset.py
+    - How can we categorize types of application?
+    - What are types of applications in software?
+- intent: set_softwareEngineeringDisciplines
+  examples: |
+    - There are two types of disciplines in software engineering, [computer science](softwareEngineeringDisciplines) and [systems engineering](softwareEngineeringDisciplines).
+    - The two types in software engineering are [computer science](softwareEngineeringDisciplines) and [systems engineering](softwareEngineeringDisciplines).
+    - We differ in software engineering between [computer science](softwareEngineeringDisciplines) and [systems engineering](softwareEngineeringDisciplines).
+    - Software engineering can be divided into [computer science](softwareEngineeringDisciplines) and [systems engineering](softwareEngineeringDisciplines).
+    - [computer science](softwareEngineeringDisciplines) and [systems engineering](softwareEngineeringDisciplines).
+    - Talking about software engineering, there are two disciplines. [Computer science]{"entity": "softwareEngineeringDisciplines", "value": "computer science"} and [systems engineering](softwareEngineeringDisciplines)
+- intent: get_softwareEngineeringDisciplines
+  examples: |
+    - What are the two disciplines in software engineering?
+    - What are the two types in software engineering?
+    - Tell me something about software engineering.
+    - Which types of disciplines are there in software engineering?
+    - Software Engineering.
+    - Concerning software engineering, which types are there?
+- intent: set_softwareEthics
+  examples: |
+    - Important standards in software ethics are [secrecy](softwareEthics), [competence](softwareEthics), [intellectual properties](softwareEthics) and [computer misuse](softwareEthics).
+    - Four aspects of software ethics are [secrecy](softwareEthics), [competence](softwareEthics), [intellectual properties](softwareEthics) and [computer misuse](softwareEthics).
+    - The four following aspects are important in software ethics: [secrecy](softwareEthics), [competence](softwareEthics), [intellectual properties](softwareEthics) and [computer misuse](softwareEthics).
+    - Important in software ethics are [secrecy](softwareEthics), [competence](softwareEthics), [intellectual properties](softwareEthics) and [computer misuse](softwareEthics).
+    - [secrecy](softwareEthics), [competence](softwareEthics), [intellectual properties](softwareEthics) and [computer misuse](softwareEthics).
+    - Talking about software ethics, [secrecy](softwareEthics), [competence](softwareEthics), [intellectual properties](softwareEthics) and [computer misuse](softwareEthics) shall be mentioned.
+- intent: get_softwareEthics
+  examples: |
+    - What is important in software ethics?
+    - Tell me something about software ethics.
+    - What do you know about software ethics?
+    - What are the four aspects in software ethics?
+    - Concerning software ethics, what are important aspects?
+    - Talking about software ethics, what are important aspects?
+- intent: get_all_knowledge
+  examples: |
+    - What have we learned today?
+    - Give me all the learned content of today.
+    - Tell me everything you know. 
+    - Learned content. 
+    - Done for today.
 - intent: get_learned_content_of_specific_topic
   examples: |
     - Tell me something about [softwareTypes](searchValue)?
     - Tell me something about [softwareQuality](searchValue)?
-#    - What are the two [Software Types](searchValue)?
-#    - What do you know about [Software Types](searchValue)?
-
+- synonym: Entertainment Systems
+  examples: |
+    - entertainment systems
+- synonym: computer science
+  examples: |
+    - Computer science
+- regex: userName
+  examples: |
+    - [A-Za-z]+$
