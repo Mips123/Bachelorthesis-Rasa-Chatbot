@@ -136,6 +136,7 @@ actions:
 - action_get_areasOfTension
 - action_get_professionalSoftwareDevelopment
 - action_get_all_learned_content
+- action_explain_bot_to_user
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
