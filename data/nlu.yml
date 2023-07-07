@@ -101,6 +101,8 @@ nlu:
     - My name is [Stefan](userName)
     - Call me [Peter](userName)
     - My name is [Oliver](userName)
+    - My name is [Julian](userName)
+    - My name is [Lukas](userName)
 - intent: set_professionalSoftwareDevelopment
   examples: |
     - Professional software development can be described with [programming as side activity](professionalSoftwareDevelopment) and [professional programming](professionalSoftwareDevelopment)
@@ -136,6 +138,7 @@ nlu:
     - There are two types of software. [Generic software](softwareTypes) and [bespoke software](softwareTypes)
     - The two types of software are [bespoke software](softwareTypes) and [generic software](softwareTypes)
     - The types of software are [bespoke software](softwareTypes) and [generic software](softwareTypes)
+    - Two types of software are [customized software](softwareTypes) and [generic software](softwareTypes)
 - intent: get_softwareTypes
   examples: |
     - What software types are there?

@@ -1,10 +1,3 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
 from typing import Any, Text, Dict, List
 from rasa_sdk.events import SlotSet
 from rasa_sdk import Action, Tracker
@@ -50,7 +43,7 @@ class ActionSaveName(Action):
             return [SlotSet("userName", user_name)]
         else:
             dispatcher.utter_message(
-                text="Sorry i didnt get that, please enter your name again.")
+                text="Sorry i did not get that, please enter your name again.")
             return []
 
 
@@ -61,10 +54,9 @@ class ExplainBotToUser(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(
-            text=f"Great to hear that! \n"
-                 f"I am Bob the learning bot. \n"
-                 f"My intent is to learn something together with you. Here is how it works. \n"
-                 f"Quick example: Have a look at page 4 of your script. "
+            text=f"I am Bob the learning bot. \n"
+                 f"My purpose is to learn something together with you. Here is how it works. \n"
+                 f"Have a look at page 4 of your script. "
                  f"If you want to teach me the content, write a text like this: \n"
                  f"\"Professional Software development consists of programming as side activity and professional programming\" \n"
                  f"After that, you can ask me what i have learned via \"Tell me something about professional software development\"\n"

@@ -46,7 +46,7 @@ class ActionGetInformationSoftwareType(Action):
         if information_learned:
             dispatcher.utter_message(text=f"Learned content for {search_value} is: {information_learned}")
         else:
-            dispatcher.utter_message(f"No {search_value} are specified.")
+            dispatcher.utter_message(f"No information about {search_value} learned so far.")
 
         return []
 
@@ -175,6 +175,7 @@ class ActionGetInformationSoftware(Action):
             dispatcher.utter_message(f"No information about {search_value} learned so far.")
 
         return []
+
 
 # this function only return the set of information about a certain topic - softwareEngineeringDisciplines
 class ActionGetSoftwareEngineeringDisciplines(Action):
