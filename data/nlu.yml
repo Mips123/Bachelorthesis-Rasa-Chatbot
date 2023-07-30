@@ -60,6 +60,7 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - good, thanks
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -76,12 +77,6 @@ nlu:
     - extremely sad
     - so saad
     - so sad
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
 - intent: hello_world
   examples: |
     - Hello World
@@ -235,8 +230,8 @@ nlu:
   examples: |
     - What have we learned today?
     - Give me all the learned content of today.
-    - Tell me everything you know. 
-    - Learned content. 
+    - Tell me everything you know.
+    - Learned content.
     - Done for today.
 - intent: get_learned_content_of_specific_topic
   examples: |

@@ -18,7 +18,7 @@ class ActionHelloWorld(Action):
         return []
 
 
-# this should reset the intent line of the bot in case he´s stuck
+# this function should confirm the learning process and should unlock the bot if he´s stuck
 class ConfirmLearning(Action):
     def name(self) -> Text:
         return "action_confirm_learning"
@@ -26,7 +26,7 @@ class ConfirmLearning(Action):
     def run(
             self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict[Text, Any]]:
-        # Nachricht senden und auf Benutzereingabe warten
+        # Send message and wait for user response
         dispatcher.utter_message(text="Great, let´s learn something new!")
         return []
 

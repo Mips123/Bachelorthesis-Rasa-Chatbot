@@ -2,13 +2,6 @@ version: "3.1"
 
 stories:
 
-#- story: happy path
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: mood_great
-#  - action: utter_happy
-
 - story: learning path
   steps:
     - intent: greet
@@ -18,22 +11,18 @@ stories:
         - intent: mood_unhappy
     - action: action_explain_bot_to_user
 
-#- story: Getting to know each other
-#  steps:
-#  - intent: save_name
-#    entities:
-#    - userName: David
-#  - slot_was_set:
-#    - userName: David
-#  - action: action_save_name
+# does not sometimes trigger the learning path
+- story: Learning Path happy
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: action_explain_bot_to_user
 
-
-#- story: Teach Bot
-#  steps:
-#    - intent: teach
-#    - action: action_confirm_learning
-#    - intent: set_softwareType
-#    - action: action_save_knowledge
-#    - intent: get_softwareType
-#    - action: action_get_information
-
+# does not sometimes trigger the learning path
+- story: Learning Path sad
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: action_explain_bot_to_user

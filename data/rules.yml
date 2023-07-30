@@ -1,14 +1,17 @@
 version: "3.1"
 rules:
+# content until next comment was copied from https://github.com/RasaHQ/rasa-nlu-examples
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
+# content until here was copied from https://github.com/RasaHQ/rasa-nlu-examples
 
-- rule: Say 'I am listening' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+# say hello to the user
+#- rule: Greet the user
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
 
 - rule: Greet the World
   steps:
